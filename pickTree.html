@@ -1,0 +1,15 @@
+<div class="bar bar-header">
+    <button ng-show="showBackButton()" ng-click="back()" class="button button-icon icon ion-ios7-arrow-left"></button>
+    <div class="h1 title">Select</div>
+</div>
+
+<content has-header="true">
+    <list class="list">
+        <item ng-repeat="item in items" class="item item-icon-left item-icon-right" ng-click="click(item)">
+            <i ng-if="canSelect(item)" ng-click="select(item)"
+               class="icon ion-ios7-checkmark-outline"></i>
+            {{ item.name }}
+            <i ng-show="hasChildren(item)" class="icon ion-ios7-arrow-right"></i>
+        </item>
+    </list>
+</content>
