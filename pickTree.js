@@ -9,10 +9,6 @@ angular.module('treePick', ['ngAnimate', 'ionic'])
 
                 $scope.history = [];
 
-                $scope.back = function (obj) {
-                    var parents = $scope.history.pop();
-                    $scope.items = parents;
-                };
 
                 $scope.canSelect = function (item) {
                     return !!item.canSelect;
@@ -29,6 +25,11 @@ angular.module('treePick', ['ngAnimate', 'ionic'])
                 $scope.select = function (item) {
                     selected = item;
                     console.log('selected leaf', item);
+                };
+
+                $scope.back = function (obj) {
+                    var parents = $scope.history.pop();
+                    $scope.items = parents;
                 };
 
                 $scope.click = function (item) {
